@@ -11,7 +11,7 @@ puppeteer.use(stealthPlugin());
 
 export const scrape = async (url: string) => {
   try {
-    console.log(url);
+     console.log(url);
 
     const cookies = JSON.parse(fs.readFileSync("./cookies.json", "utf8"));
 
@@ -31,7 +31,6 @@ export const scrape = async (url: string) => {
     });
 
     const page = await browser.newPage({});
-    //await page.setDefaultNavigationTimeout(1000);
 
     // Set cookies before navigating
     await page.setCookie(...cookies);
@@ -54,9 +53,9 @@ export const scrape = async (url: string) => {
 
     console.log("done");
 
-    await browser.close();
+    fs.writeFileSync(path.join("blogs.json"), JSON.stringify(blogs, null, 2));
 
-    console.log(blogs);
+    await browser.close();
 
     return blogs;
   } catch (error) {
@@ -67,13 +66,13 @@ export const scrape = async (url: string) => {
 async function parseDevToBlogs(html: any) {
   const $ = cheerio.load(html);
 
-  fs.writeFileSync("output-html.html", $.html(), "utf-8");
-
   const blogList: {
     title: string;
     link: string;
     tags: string[];
     reactionCount: string;
+    commentCount: string;
+    readTime: string;
     comments: string[];
     createdAt: string;
   }[] = [];
@@ -96,7 +95,7 @@ async function parseDevToBlogs(html: any) {
       const tags = $(el)
         .find(".crayons-tag")
         .each((index: number, tag: string) => {
-          blogTags.push($(tag).text().replace(/\s+/g, " "));
+          blogTags.push($(tag).text().replace(/\s+/g, " ").replace("#", ""));
         });
 
       const reactionCount = $(el)
@@ -120,11 +119,26 @@ async function parseDevToBlogs(html: any) {
         .replace(/\s+/g, " ")
         .trim();
 
+      const commentCount = $(el)
+        .find("span[title='Number of comments']")
+        .text()
+        .replace(/\s+/g, " ")
+        .trim();
+
+      const readTime = $(el)
+        .find(".crayons-story__save")
+        .text()
+        .replace(/\s+/g, " ")
+        .replace("read", "")
+        .trim();
+
       blogList.push({
         title,
         link,
         tags: blogTags,
         reactionCount,
+        commentCount,
+        readTime,
         comments: blogComments,
         createdAt,
       });

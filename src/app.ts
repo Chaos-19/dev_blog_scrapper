@@ -8,6 +8,7 @@ import healthRoutes from "./routes/health";
 import { errorHandler } from "./middleware/errorHandler";
 import logger from "./utils/logger";
 import { scrape } from "./services/scrapingService";
+import setupCronJobs from "./services/setupCronJobs ";
 
 dotenv.config();
 
@@ -26,7 +27,11 @@ app.use((req, res, next) => {
 app.use("/", healthRoutes);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-scrape(process.env.WEB_URL_TO_SCRAP || "https://example.com");
+//setupCronJobs("0 */4 * * *");
+setupCronJobs("0 6,14,22 * * *");
+//setupCronJobs("*/20 * * * *");
+//setupCronJobs("*/20 * * * *");
+//scrape(process.env.WEB_URL_TO_SCRAP || "https://example.com");
 
 app.get("/health", (req: Request, res: Response) => {
   res.status(200).json({ message: "API is running" });

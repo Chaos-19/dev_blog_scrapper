@@ -1,3 +1,4 @@
+import cluster from "cluster";
 import { sql } from "drizzle-orm";
 import {
   boolean,
@@ -15,42 +16,27 @@ export const blogPost = pgTable("blog_post", {
   title: varchar("title").notNull(),
   link: varchar("link").notNull(),
   reactionCount: varchar("reactionCount"),
+  commentCount: varchar("commentCount"),
+  readTime: varchar("readTime"),
   tags: text("tags").array(),
   comments: text("comments").array(),
-  createdAt: timestamp("created_at"),
+  scrapedAt: timestamp("scraped_at").notNull().defaultNow(),
+  createdAt: timestamp("created_at").notNull(),
+  postHash: text("post_hash").notNull(),
 });
 
-/* export const users = pgTable('users', {
-    id: serial('serial').primaryKey(),
-    email:varchar('email').notNull(),
-    api_key: text('api_key')
-    .array().default(sql`ARRAY[]::text[]`),
-    role: varchar('role').notNull().default('user'),
-    notify:boolean('notify').default(false),
-    notifyAbout:text('notify_about')
-    .array()
+export const clusteredPost = pgTable("clustered_post", {
+  id: serial("id").primaryKey(),
+
+  blogPostId: integer("blog_post_id")
     .notNull()
-    .default(sql`ARRAY[]::text[]`),
-    createdAt: timestamp("created_at"),
-    updatedAt: timestamp("updated_at"),
-});
+    .references(() => blogPost.id, { onDelete: "cascade" }),
 
-export const jobs = pgTable('jobs', {
-    id: serial('id').primaryKey(),
-    company: varchar('company'),
-    deadline: timestamp('deadline'),
-    description: text('description'),
-    experienceLevel: varchar('experience_level'),
-    jobType: varchar('job_type'),
-    location: varchar('location'),
-    sector: varchar('sector'),
-    skillrequirements: text('skill_requirements'),
-    title: varchar('title'),
-    createdAt: timestamp('created_at').defaultNow(),
-    updatedAt: timestamp('updated_at').defaultNow(),
-});
+  clusterType: varchar("cluster_type").notNull(), // e.g. "topic", "popularity", "recency"
+  clusterLabel: varchar("cluster_label").notNull(), // e.g. "ai", "trending", "short_read"
+  //clusterScore: integer("cluster_score"), // Optional, for ranking
+  clusterTags: text("cluster_tags").array(), // Optional, if multi-label in one
 
-export const scrapList = pgTable('scrap_list', {
-    id: serial('id').primaryKey(),
-    title: varchar('title').notNull(),
-}) */
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+});

@@ -1,5 +1,8 @@
 import winston from "winston";
 
+
+// Create a logger instance with different transports based on the environment
+
 const logger = winston.createLogger({
   level: process.env.NODE_ENV === "production" ? "info" : "debug",
   format: winston.format.combine(
