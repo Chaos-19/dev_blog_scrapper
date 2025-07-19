@@ -23,7 +23,7 @@ import { auth } from "../auth";
  * @param req - The request object containing query parameters.
  * @param res - The response object to send the results.
  */
-const getBlogs = async (req: Request, res: Response) => {
+const getBlogs = async (req: Request, res: Response): Promise<void> => {
   const { apiKey } = req.query;
 
   try {
@@ -63,10 +63,10 @@ const getBlogs = async (req: Request, res: Response) => {
       .where(inArray(blogPost.id, blogPostIds))
       .orderBy(desc(blogPost.createdAt));
 
-    return res.status(200).json(blogs);
+    res.status(200).json(blogs);
   } catch (error) {
     logger.error("Error fetching blogs:", error);
-    return res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
