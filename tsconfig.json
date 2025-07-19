@@ -110,7 +110,12 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
-  "include": ["src/**/*", "test-scraper/selectorTest.js"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts"],
+  "include": [ 
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/tests/**/*.ts",
+    "test-scraper/selectorTest.js"
+  ],
+  "exclude": ["node_modules", "dist",],
 
 }
