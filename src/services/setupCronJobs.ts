@@ -31,7 +31,7 @@ const setupCronJobs = async (cronExpression: string = "* */8 * * *") => {
         logger.info(`Inserted ${result.insertedCount} new blog posts`);
 
         if (result.posts && result.posts?.length > 0) {
-          insertClusteredPosts(result.posts);
+          await insertClusteredPosts(result.posts);
           logger.info(
             `Inserted clustered posts for ${result.posts.length} blogs`
           );
