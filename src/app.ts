@@ -37,13 +37,12 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(requireAuth);
+//app.use(requireAuth);
 app.use("/", healthRoutes);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 //setupCronJobs("0 */4 * * *");
 setupCronJobs("0 6,14,22 * * *");
-
 
 app.get("/health", (req: Request, res: Response) => {
   res.status(200).json({ message: "API is running" });
