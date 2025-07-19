@@ -111,7 +111,8 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "include": [ 
-    "src/**/*.ts",
+    "src",
+    "drizzle.config.ts",
     "src/**/*.tsx",
     "src/tests/**/*.ts",
     "test-scraper/selectorTest.js"
