@@ -8,7 +8,7 @@ import healthRoutes from "./routes/health";
 import { errorHandler } from "./middleware/errorHandler";
 import logger from "./utils/logger";
 import { scrape } from "./services/scrapingService";
-import setupCronJobs from "./services/setupCronJobs ";
+import setupCronJobs from "./services/setupCronJobs";
 
 dotenv.config();
 

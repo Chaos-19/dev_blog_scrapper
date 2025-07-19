@@ -63,7 +63,7 @@ export const scrape = async (url: string) => {
   }
 };
 
-async function parseDevToBlogs(html: any) {
+export async function parseDevToBlogs(html: any) {
   const $ = cheerio.load(html);
 
   const blogList: {
