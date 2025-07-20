@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { fromNodeHeaders } from "better-auth/node";
-import { auth } from "../auth";
+import { auth } from "../auth.js";
 
 //import type { Session } from "better-auth";
 

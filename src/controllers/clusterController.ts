@@ -1,10 +1,10 @@
-import { db } from "../config/db";
-import { blogPost, clusteredPost } from "../schema/schema";
-import { clusterService } from "../services/clusterServices";
+import { db } from "../config/db.js";
+import { blogPost, clusteredPost } from "../schema/schema.js";
+import { clusterService } from "../services/clusterServices.js";
 
-import { BlogType, ClusteredPostType } from "../types";
+import { BlogType, ClusteredPostType } from "../types/index.js";
 import { Response, Request } from "express";
-import logger from "../utils/logger";
+import logger from "../utils/logger.js";
 
 
 const getClutteredPosts = async (req: Request, res: Response) => {
@@ -14,7 +14,7 @@ const getClutteredPosts = async (req: Request, res: Response) => {
 export const insertClusteredPosts = async (newPosts: BlogType<Date>[]) => {
   if (!newPosts?.length) return;
 
-  const allClusterEntries = [];
+  const allClusterEntries: ClusteredPostType[] = [];
 
   for (const post of newPosts) {
     const clusterEntries = clusterService.generateClustersForPost(post);

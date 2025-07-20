@@ -1,4 +1,4 @@
-import setupCronJobs from "../../services/setupCronJobs";
+import setupCronJobs from "../../services/setupCronJobs.js"
 
 describe("setupCronJobs", () => {
   it("should set up cron jobs successfully", () => {

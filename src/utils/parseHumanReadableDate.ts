@@ -1,4 +1,4 @@
-import logger from "./logger";
+import logger from "./logger.js"
 
 /**
  * Converts a human-readable date like "Jul 12 (2 days ago)" to a Date object or ISO string.

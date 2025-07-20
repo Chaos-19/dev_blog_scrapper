@@ -1,16 +1,16 @@
-import { db } from "../config/db";
-import { blogPost, clusteredPost } from "../schema/schema";
+import { db } from "../config/db.js";
+import { blogPost, clusteredPost } from "../schema/schema.js";
 
 import { Response, Request } from "express";
 
 import { and, desc, eq, ilike, inArray, or } from "drizzle-orm";
-import { BlogType } from "../types";
+import { BlogType } from "../types/index.js";
 import crypto from "crypto";
-import { parseHumanReadableDate } from "../utils/parseHumanReadableDate";
-import logger from "../utils/logger";
+import { parseHumanReadableDate } from "../utils/parseHumanReadableDate.js";
+import logger from "../utils/logger.js";
 import type { User } from "better-auth";
-import { user } from "../schema/auth-schema";
-import { auth } from "../auth";
+import { user } from "../schema/auth-schema.js";
+import { auth } from "../auth.js";
 
 /* declare module "express-serve-static-core" {
   interface Request {

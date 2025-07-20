@@ -1,4 +1,4 @@
-import { parseHumanReadableDate } from '../../utils/parseHumanReadableDate';
+import { parseHumanReadableDate } from '../../utils/parseHumanReadableDate.js';
 
 describe('parseHumanReadableDate', () => {
   it('should correctly parse a human-readable date string', () => {

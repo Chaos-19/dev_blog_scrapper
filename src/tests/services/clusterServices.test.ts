@@ -1,5 +1,5 @@
-import { clusterService } from '../../services/clusterServices';
-import { BlogType } from '../../types';
+import { clusterService } from '../../services/clusterServices.js'  
+import { BlogType } from '../../types/index.js'
 
 describe('clusterService', () => {
   const mockPost: BlogType<Date> = {
