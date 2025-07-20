@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "NodeNext", // Use NodeNext for ESM compatibility
-    "moduleResolution": "nodenext", // or "node"
+    "moduleResolution": "NodeNext", // or "node"
     "esModuleInterop": true,
     "strict": true,
     "outDir": "./dist",
