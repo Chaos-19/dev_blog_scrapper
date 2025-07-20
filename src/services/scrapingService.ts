@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 
 import stealthPlugin from "puppeteer-extra-plugin-stealth";
 
-const puppeteer = puppeteerExtra; // Ensure compatibility with ESM
+const puppeteer = puppeteerExtra.default; // Ensure compatibility with ESM
 
 dotenv.config();
 puppeteer.use(stealthPlugin());
