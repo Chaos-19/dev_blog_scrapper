@@ -1,5 +1,5 @@
-import { clusteredPost } from  "../schema/schema";
-import { BlogType, ClusteredPostType } from "../types";
+import { clusteredPost } from  "../schema/schema.js";
+import { BlogType, ClusteredPostType } from "../types/index.js"
 
 
 // Define thresholds

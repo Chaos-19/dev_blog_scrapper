@@ -1,4 +1,4 @@
-import { parseDevToBlogs } from '../../services/scrapingService';
+import { parseDevToBlogs } from '../../services/scrapingService.js';
 
 
 describe('Scraping Service - parseDevToBlogs', () => {

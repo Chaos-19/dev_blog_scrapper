@@ -1,43 +1,72 @@
-import { db } from "../config/db";
-import { blogPost } from "../schema/schema";
+import { db } from "../config/db.js";
+import { blogPost, clusteredPost } from "../schema/schema.js";
 
 import { Response, Request } from "express";
 
 import { and, desc, eq, ilike, inArray, or } from "drizzle-orm";
-import { BlogType } from "../types";
+import { BlogType } from "../types/index.js";
 import crypto from "crypto";
-import { parseHumanReadableDate } from "../utils/parseHumanReadableDate";
-import logger from "../utils/logger";
+import { parseHumanReadableDate } from "../utils/parseHumanReadableDate.js";
+import logger from "../utils/logger.js";
+import type { User } from "better-auth";
+import { user } from "../schema/auth-schema.js";
+import { auth } from "../auth.js";
+
+/* declare module "express-serve-static-core" {
+  interface Request {
+    apiKey?: any;
+  }
+} */
 
 /**
  * Fetches blog posts from the database based on the provided query parameters.
  * @param req - The request object containing query parameters.
  * @param res - The response object to send the results.
  */
-const getBlogs = async (req: Request, res: Response) => {
-  const { search, tag, limit = 10, offset = 0 } = req.query;
+const getBlogs = async (req: Request, res: Response): Promise<void> => {
+  const { apiKey } = req.query;
 
   try {
+    // 1. Load user based on API key
+    const session = await auth.api.getSession({
+      headers: new Headers({
+        "x-api-key": apiKey as string,
+      }),
+    });
+
+    const user = session?.user;
+
+    const { topics, readTime } = {
+      topics: Array.isArray(user?.topicsOfInterset)
+        ? user.topicsOfInterset
+        : [],
+      readTime: Boolean(user?.readTime) ? (user?.readTime as string) : "",
+    };
+
+    const clusters = await db
+      .select()
+      .from(clusteredPost)
+      .where(
+        and(
+          inArray(clusteredPost.clusterLabel, [...topics, readTime]),
+          inArray(clusteredPost.clusterType, ["topic", "read_length"])
+        )
+      )
+      .limit(Number(10))
+      .offset(Number(0))
+      .orderBy(desc(clusteredPost.createdAt));
+
+    const blogPostIds = clusters.map((c) => c.blogPostId);
     const blogs = await db
       .select()
       .from(blogPost)
-      .where(
-        and(
-          or(
-            ilike(blogPost.title, `%${search || ""}%`),
-            ilike(blogPost.tags, `%${tag || ""}%`)
-          ),
-          eq(blogPost.postHash, "")
-        )
-      )
-      .limit(Number(limit))
-      .offset(Number(offset))
+      .where(inArray(blogPost.id, blogPostIds))
       .orderBy(desc(blogPost.createdAt));
 
-    return res.status(200).json(blogs);
+    res.status(200).json(blogs);
   } catch (error) {
-    logger.info(`Error fetching blogs: ${error}`);
-    return res.status(500).json({ error: "Internal Server Error" });
+    logger.error("Error fetching blogs:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
