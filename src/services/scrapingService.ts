@@ -1,17 +1,17 @@
-const path = require("path");
-const cheerio = require("cheerio"); // Library for parsing HTML
-const fs = require("fs");
-const puppeteer = require("puppeteer-extra");
+import path from "path";
+import cheerio from "cheerio"; // Library for parsing HTML
+import fs from "fs";
+import puppeteer from "puppeteer-extra";
+import dotenv from "dotenv";
 
-require("dotenv").config();
+import stealthPlugin from "puppeteer-extra-plugin-stealth";
 
-const stealthPlugin = require("puppeteer-extra-plugin-stealth");
-
+dotenv.config();
 puppeteer.use(stealthPlugin());
 
 export const scrape = async (url: string) => {
   try {
-     console.log(url);
+    console.log(url);
 
     const cookies = JSON.parse(fs.readFileSync("./cookies.json", "utf8"));
 
@@ -30,14 +30,14 @@ export const scrape = async (url: string) => {
           : puppeteer.executablePath(),
     });
 
-    const page = await browser.newPage({});
+    const page = await browser.newPage();
 
     // Set cookies before navigating
     await page.setCookie(...cookies);
 
     await page.goto(url, { timeout: 0 });
 
-    await page.viewport({ width: 2920, height: 1080 });
+    await page.setViewport({ width: 2920, height: 1080 });
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
@@ -88,13 +88,13 @@ export async function parseDevToBlogs(html: any) {
 
       const link = $(el)
         .find(".crayons-story__hidden-navigation-link")
-        .attr("href");
+        .attr("href") as string;
 
       const blogTags: string[] = [];
 
       const tags = $(el)
         .find(".crayons-tag")
-        .each((index: number, tag: string) => {
+        .each((index: number, tag: any) => {
           blogTags.push($(tag).text().replace(/\s+/g, " ").replace("#", ""));
         });
 
@@ -108,7 +108,7 @@ export async function parseDevToBlogs(html: any) {
 
       const comments = $(el)
         .find(".crayons-comment__inner")
-        .each((index: number, comment: string) => {
+        .each((index: number, comment: any) => {
           blogComments.push($(comment).text().replace(/\s+/g, " "));
         });
 
