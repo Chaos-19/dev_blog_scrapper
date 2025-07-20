@@ -25,4 +25,4 @@ WORKDIR /usr/src/app/dist
 
 # Command to run the application
 #CMD ["node", "/index.js"]
-CMD node src/server.js
+CMD node server.js
