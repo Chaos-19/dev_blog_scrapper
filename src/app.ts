@@ -1,17 +1,17 @@
 import express, { Application, NextFunction, Request, Response } from "express";
 import swaggerUi from "swagger-ui-express";
-import swaggerSpec from "./docs/swagger";
+import swaggerSpec from "./docs/swagger.js";
 import helmet from "helmet";
 import cors from "cors";
 import dotenv from "dotenv";
 import { toNodeHandler } from "better-auth/node";
-import { auth } from "./auth";
-import healthRoutes from "./routes/health";
-import { errorHandler } from "./middleware/errorHandler";
-import logger from "./utils/logger";
+import { auth } from "./auth.js";
+import healthRoutes from "./routes/health.js";
+import { errorHandler } from "./middleware/errorHandler.js";
+import logger from "./utils/logger.js";
 //import { scrape } from "./services/scrapingService";
-import setupCronJobs from "./services/setupCronJobs";
-import { requireAuth } from "./middleware/authenticate";
+import setupCronJobs from "./services/setupCronJobs.js";
+import { requireAuth } from "./middleware/authenticate.js";
 
 dotenv.config();
 

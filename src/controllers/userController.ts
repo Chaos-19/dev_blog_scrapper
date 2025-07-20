@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { auth } from "../auth";
-import logger from "../utils/logger";
+import { auth } from "../auth.js";
+import logger from "../utils/logger.js";
 
 /**
  * User registration controller for handling user sign-up requests.

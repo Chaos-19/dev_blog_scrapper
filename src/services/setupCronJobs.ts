@@ -1,11 +1,11 @@
 import cron from "node-cron";
-import { scrape } from "./scrapingService";
-import config from "../config/config";
-import logger from "../utils/logger";
-import { insertBlog } from "../controllers/blogController";
-import { clusterService } from "./clusterServices";
-import { BlogType } from "../types";
-import { insertClusteredPosts } from "../controllers/clusterController";
+import { scrape } from "./scrapingService.js";
+import config from "../config/config.js";
+import logger from "../utils/logger.js";
+import { insertBlog } from "../controllers/blogController.js";
+import { clusterService } from "./clusterServices.js";
+//import { BlogType } from "../types.js";
+import { insertClusteredPosts } from "../controllers/clusterController.js";
 
 /**
  * Sets up cron jobs for scraping data from specified URLs.

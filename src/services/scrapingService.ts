@@ -1,10 +1,12 @@
 import path from "path";
-import cheerio from "cheerio"; // Library for parsing HTML
+import * as cheerio from "cheerio";
 import fs from "fs";
-import puppeteer from "puppeteer-extra";
+import puppeteerExtra from "puppeteer-extra";
 import dotenv from "dotenv";
 
 import stealthPlugin from "puppeteer-extra-plugin-stealth";
+
+const puppeteer = puppeteerExtra.default; // Ensure compatibility with ESM
 
 dotenv.config();
 puppeteer.use(stealthPlugin());
