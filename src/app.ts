@@ -12,6 +12,7 @@ import logger from "./utils/logger.js";
 //import { scrape } from "./services/scrapingService";
 import setupCronJobs from "./services/setupCronJobs.js";
 import { requireAuth } from "./middleware/authenticate.js";
+import userRoute from "./routes/user.js";
 
 dotenv.config();
 
@@ -23,13 +24,13 @@ app.use(express.json());
 
 app.use(helmet());
 // Configure CORS middleware
-app.use(
+/* app.use(
   cors({
     origin: "http://localhost:300",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
-);
+); */
 
 app.use(errorHandler);
 app.use((req, res, next) => {
@@ -38,9 +39,13 @@ app.use((req, res, next) => {
 });
 
 //app.use(requireAuth);
-app.use("/", healthRoutes);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+app.use("/", healthRoutes);
+app.use("/api/user", userRoute);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+/* app.post("/user", (req, res) => {
+  res.status(201).json({ name: "Ruben" });
+}); */
 //setupCronJobs("0 */4 * * *");
 setupCronJobs("0 6,14,22 * * *");
 
