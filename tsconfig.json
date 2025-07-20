@@ -11,7 +11,8 @@
     "skipLibCheck": true,
     "noImplicitAny": false
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "drizzle.config.ts"],
+  "exclude": ["node_modules", "dist", "src/**/*.test.ts"],
   "ts-node": {
     "esm": true // Enable ESM for ts-node
   }

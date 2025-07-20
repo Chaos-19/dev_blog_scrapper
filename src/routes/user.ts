@@ -1,9 +1,9 @@
-import { Router } from "express";
+import express, { Request, Response } from "express";
+
 import { registerUser } from "../controllers/userController.js";
 
-const router = Router();
+const router = express.Router();
 
-// User registration route
-router.post("/api/auth/register", registerUser);
+router.post("/register", registerUser);
 
 export default router;

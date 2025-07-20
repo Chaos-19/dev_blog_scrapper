@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { auth } from "../auth.js";
 import logger from "../utils/logger.js";
+import { authClient } from "../lib/auth-client.js";
 
 /**
  * User registration controller for handling user sign-up requests.
@@ -24,7 +25,9 @@ export async function registerUser(req: Request, res: Response): Promise<void> {
       body: {
         email,
         password,
-        name: email.split("@")[0], // Use email prefix as name
+        name: email.split("@")[0],
+        topicsOfInterset: topics,
+        readTime: readTime,
       },
     });
 
@@ -35,7 +38,7 @@ export async function registerUser(req: Request, res: Response): Promise<void> {
         prefix: "DailNugget",
         remaining: 100,
         refillAmount: 100,
-        //refillInterval: 60 * 60 * 24 * 7, // 7 days
+        refillInterval: 60 * 60 * 24 * 7, // 7 days
         metadata: {
           tier: "free",
         },
@@ -51,9 +54,14 @@ export async function registerUser(req: Request, res: Response): Promise<void> {
     res.status(201).json({
       message: "User registered successfully",
       user: { id: user.id, email: user.email },
-      apiKey,
+      apiKey: {
+        id: apiKey.id,
+        key: apiKey.key,
+        userId: apiKey.userId,
+      },
     });
   } catch (err: any) {
+    logger.error(`Registration failed for ${email}: ${err.message}`);
     res.status(500).json({ error: err.message || "Registration failed" });
   }
 }
