@@ -11,7 +11,7 @@
     "skipLibCheck": true,
     "noImplicitAny": false
   },
-  "include": ["src/**/*.ts", "drizzle.config.ts", "test-scraper/seed_db.ts"],
+  "include": ["src/**/*.ts", "src/drizzle.config.ts", "test-scraper/seed_db.ts"],
   "exclude": ["node_modules", "dist/*", "src/**/*.test.ts","**/*.test.ts", "**/*.spec.ts"],
   "ts-node": {
     "esm": true // Enable ESM for ts-node
