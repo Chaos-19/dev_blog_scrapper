@@ -1,4 +1,4 @@
-import { Router } from "express";
+import e, { Router } from "express";
 
 import { getBlogs, insertBlog, deleteJob } from "../controllers/blogController.js";
 
@@ -22,3 +22,12 @@ const router = Router();
  */
 
 router.get("/blogs", getBlogs);
+router.post("/insert", (req, res) => {
+  const data = req.body;
+    insertBlog(data)
+        .then(() => res.status(201).json({ message: "Blog inserted successfully" }))
+        .catch((error) => res.status(500).json({ error: error.message }));
+});
+
+
+export default router;

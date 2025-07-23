@@ -1,0 +1,701 @@
+[
+  {
+    "title": "Implementing a Basic Strands Agent with MCP Servers",
+    "link": "https://dev.to/om_shree_0709/implementing-a-basic-strands-agent-with-mcp-servers-1269",
+    "tags": [
+      "programming",
+      "ai",
+      "beginners",
+      "productivity"
+    ],
+    "reactionCount": "19 Reactions",
+    "commentCount": "5 Comments",
+    "readTime": "3 min",
+    "comments": [
+      "Nice one, can u explain why we have 3 different agents mode in AWS (Strands, Bedrock and agentcore) ? why dont we have a single agent that does it all???",
+      "Well written sir"
+    ],
+    "createdAt": "Jul 20 (22 hours ago)11 hours ago21 hours ago"
+  },
+  {
+    "title": "Hit 100 GitHub Followers — Thank You!",
+    "link": "https://dev.to/vihanga_anuththara_0a402f/hit-100-github-followers-thank-you-5751",
+    "tags": [
+      "github"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "1 min",
+    "comments": [],
+    "createdAt": "Jul 20 (1 day ago)"
+  },
+  {
+    "title": "My FastAPI template repo",
+    "link": "https://dev.to/smenendez19/my-fastapi-template-repo-dc7",
+    "tags": [
+      "programming",
+      "python",
+      "fastapi",
+      "api"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "1 min",
+    "comments": [],
+    "createdAt": "Jul 20 (1 day ago)"
+  },
+  {
+    "title": "I Built an AI-Powered API Mocking Tool That's Already Downloaded 3000+ Times - Here's What Makes It Viral",
+    "link": "https://dev.to/vision2030/i-built-an-ai-powered-api-mocking-tool-thats-already-downloaded-3000-times-heres-what-makes-it-5bkk",
+    "tags": [
+      "api",
+      "development",
+      "opensource",
+      "productivity"
+    ],
+    "reactionCount": "1 Reaction",
+    "commentCount": "",
+    "readTime": "4 min",
+    "comments": [],
+    "createdAt": "Jul 20 (1 day ago)"
+  },
+  {
+    "title": "Bringing AI to the Browser: Transform Your Web App with On-Device Models",
+    "link": "https://dev.to/kenzic/bringing-ai-to-the-browser-transform-your-web-app-with-on-device-models-1bg1",
+    "tags": [
+      "ai",
+      "browser",
+      "javascript",
+      "api"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "8 min",
+    "comments": [],
+    "createdAt": "Jul 20 (1 day ago)"
+  },
+  {
+    "title": "Self-implemented IFTTT Pro's RSS feed notification feature with AWS serverless architecture",
+    "link": "https://dev.to/masutaka/self-implemented-ifttt-pros-rss-feed-notification-feature-with-aws-serverless-architecture-2ope",
+    "tags": [
+      "rss",
+      "aws",
+      "github",
+      "mastodon"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "4 min",
+    "comments": [],
+    "createdAt": "Jul 20 (1 day ago)"
+  },
+  {
+    "title": "Great! Thanks for the details. So you’re building a **voice-controlled web app** with the following components: * Google search via API when you say \"hit search\" * 11Labs for speech (text-to-speech or also voice recognition?) * ChatGPT (Omni model) for co",
+    "link": "https://dev.to/krishna_yadav_72433048835/great-thanks-for-the-details-so-youre-building-a-voice-controlled-web-app-with-the-following-4lb8",
+    "tags": [],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "",
+    "comments": [],
+    "createdAt": ""
+  },
+  {
+    "title": "Advanced JavaScript Topics 2025",
+    "link": "https://dev.to/nozibul_islam_113b1d5334f/advanced-javascript-topics-3pam",
+    "tags": [
+      "webdev",
+      "programming",
+      "javascript",
+      "advaned"
+    ],
+    "reactionCount": "26 Reactions",
+    "commentCount": "1 Comment",
+    "readTime": "3 min",
+    "comments": [],
+    "createdAt": "Jul 20 (1 day ago)"
+  },
+  {
+    "title": "Understanding AWS Strands Agents, an Open Source AI Agents SDK",
+    "link": "https://dev.to/om_shree_0709/understanding-aws-strands-agents-an-open-source-ai-agents-sdk-o1f",
+    "tags": [
+      "aws",
+      "mcp",
+      "beginners",
+      "productivity"
+    ],
+    "reactionCount": "17 Reactions",
+    "commentCount": "2 Comments",
+    "readTime": "4 min",
+    "comments": [
+      "Well written Article Om but I'd love to learn more about the implementation details."
+    ],
+    "createdAt": "Jul 20 (1 day ago)1 day ago"
+  },
+  {
+    "title": "Recreating the Windows Settings Page UI with Search – Pure HTML, CSS, and JavaScript",
+    "link": "https://dev.to/melody_kelly_n/recreating-the-windows-settings-page-ui-with-search-pure-html-css-and-javascript-4m19",
+    "tags": [
+      "webdev",
+      "programming",
+      "beginners",
+      "javascript"
+    ],
+    "reactionCount": "10 Reactions",
+    "commentCount": "5 Comments",
+    "readTime": "1 min",
+    "comments": [
+      "Looking Good, Nice work, Learn more and build more better"
+    ],
+    "createdAt": "Jul 20 (21 hours ago)20 hours ago"
+  },
+  {
+    "title": "Week 4 of Hustle2Grand: Burnout, Freelancing, and a Mental Reset",
+    "link": "https://dev.to/vulcanwm/week-4-of-hustle2grand-burnout-freelancing-and-a-mental-reset-a3o",
+    "tags": [
+      "programming",
+      "learning",
+      "hustle2grand",
+      "appdev"
+    ],
+    "reactionCount": "1 Reaction",
+    "commentCount": "",
+    "readTime": "2 min",
+    "comments": [],
+    "createdAt": "Jul 20 (21 hours ago)"
+  },
+  {
+    "title": "Implementing Light/Dark Theme - My Struggles and Tips",
+    "link": "https://dev.to/uzzy412_73/implementing-lightdark-theme-my-struggles-and-tips-1aon",
+    "tags": [
+      "discuss",
+      "css",
+      "beginners",
+      "webdev"
+    ],
+    "reactionCount": "3 Reactions",
+    "commentCount": "3 Comments",
+    "readTime": "4 min",
+    "comments": [
+      " Hey Alex!👋🏻 You’ve picked a very interesting and useful topic! I’m currently working on a project where I need to implement a light-dark theme, and your idea of applying custom classes directly on html is See more"
+    ],
+    "createdAt": "Jul 20 (23 hours ago)21 hours ago"
+  },
+  {
+    "title": "Demystifying GPUs: From Core Architecture to Scalable Systems",
+    "link": "https://dev.to/lewis_won/demystifying-gpus-from-core-architecture-to-scalable-systems-419l",
+    "tags": [
+      "nvidia",
+      "gpu",
+      "architecture",
+      "cuda"
+    ],
+    "reactionCount": "25 Reactions",
+    "commentCount": "1 Comment",
+    "readTime": "12 min",
+    "comments": [],
+    "createdAt": "Jul 20 (21 hours ago)"
+  },
+  {
+    "title": "🔎 Step-by-Step Guide to Building a Deep Search AI with DuckDuckGo & OpenRouter 🤖",
+    "link": "https://dev.to/rajguru_yadav_56d13a7b8fc/step-by-step-guide-to-building-a-deep-search-ai-with-duckduckgo-openrouter-12fd",
+    "tags": [
+      "discuss",
+      "webdev",
+      "programming",
+      "ai"
+    ],
+    "reactionCount": "10 Reactions",
+    "commentCount": "",
+    "readTime": "5 min",
+    "comments": [],
+    "createdAt": "Jul 20 (21 hours ago)"
+  },
+  {
+    "title": "Ranking Microsoft Windows versions - 2025 Edition",
+    "link": "https://dev.to/visnalize/ranking-microsoft-windows-versions-2025-edition-14g0",
+    "tags": [
+      "watercooler"
+    ],
+    "reactionCount": "",
+    "commentCount": "2 Comments",
+    "readTime": "3 min",
+    "comments": [],
+    "createdAt": "Jul 20 (1 day ago)"
+  },
+  {
+    "title": "🧑‍💻 CSS Art: Quiet Office Culture – A Minimal Tribute to Focus",
+    "link": "https://dev.to/suvojimodak/the-digital-workspace-442g",
+    "tags": [
+      "frontendchallenge",
+      "devchallenge",
+      "css"
+    ],
+    "reactionCount": "7 Reactions",
+    "commentCount": "",
+    "readTime": "2 min",
+    "comments": [],
+    "createdAt": "Jul 20 (1 day ago)"
+  },
+  {
+    "title": "Fact-Checking the Fear Behind “The Dark Side of AI”: The Real Story",
+    "link": "https://dev.to/anchildress1/fact-checking-the-fear-behind-the-dark-side-of-ai-the-real-story-366p",
+    "tags": [
+      "ai",
+      "mentalhealth",
+      "chatgpt",
+      "technology"
+    ],
+    "reactionCount": "2 Reactions",
+    "commentCount": "1 Comment",
+    "readTime": "6 min",
+    "comments": [],
+    "createdAt": "Jul 20 (1 day ago)"
+  },
+  {
+    "title": "Creating Blog Tutorial Using Next.JS 15 & TailwindCSS 4.0 (Part #2)",
+    "link": "https://dev.to/gerryleonugroho/creating-blog-tutorial-using-nextjs-15-tailwindcss-40-part-2-55d0",
+    "tags": [
+      "webdev",
+      "nextjs",
+      "tailwindcss",
+      "beginners"
+    ],
+    "reactionCount": "7 Reactions",
+    "commentCount": "2 Comments",
+    "readTime": "6 min",
+    "comments": [
+      "Great bro, you can added the next.js article list, everyone can easily see it"
+    ],
+    "createdAt": "Jul 20 (1 day ago)10 hours ago"
+  },
+  {
+    "title": "Why I'm Betting Against AI Agents in 2025 (Despite Building Them)",
+    "link": "https://dev.to/ukanwat/why-im-betting-against-ai-agents-in-2025-despite-building-them-1c6m",
+    "tags": [
+      "ai",
+      "automation",
+      "agents",
+      "softwareengineering"
+    ],
+    "reactionCount": "3 Reactions",
+    "commentCount": "1 Comment",
+    "readTime": "7 min",
+    "comments": [],
+    "createdAt": "Jul 20 (1 day ago)"
+  },
+  {
+    "title": "What's New in Flutter 3.32.0? Your Dev Workflow Just Got an Upgrade!",
+    "link": "https://dev.to/sayed_ali_alkamel/whats-new-in-flutter-3320-your-dev-workflow-just-got-an-upgrade-49h4",
+    "tags": [
+      "flutter",
+      "dart",
+      "mobile",
+      "programming"
+    ],
+    "reactionCount": "7 Reactions",
+    "commentCount": "",
+    "readTime": "2 min",
+    "comments": [],
+    "createdAt": "Jul 20 (21 hours ago)"
+  },
+  {
+    "title": "🧩 Docker Compose – Full DevOps Power",
+    "link": "https://dev.to/dpvasani56/docker-compose-full-devops-power-4ckl",
+    "tags": [
+      "docker",
+      "devops",
+      "webdev",
+      "programming"
+    ],
+    "reactionCount": "6 Reactions",
+    "commentCount": "",
+    "readTime": "9 min",
+    "comments": [],
+    "createdAt": "Jul 20 (1 day ago)"
+  },
+  {
+    "title": "Amazon S3 Vectors Explained: Regions & Setup",
+    "link": "https://dev.to/aws-builders/s3-vectors-explained-regions-setup-2ik2",
+    "tags": [
+      "aws",
+      "ai",
+      "semanticsearch",
+      "s3vectors"
+    ],
+    "reactionCount": "6 Reactions",
+    "commentCount": "",
+    "readTime": "3 min",
+    "comments": [],
+    "createdAt": "Jul 20 (1 day ago)"
+  },
+  {
+    "title": "How to Build a Simple Node.js Server from Scratch — A Step-by-Step Guide",
+    "link": "https://dev.to/ezekiel_umesi_5bd2fa6069c/how-to-build-a-simple-nodejs-server-from-scratch-a-step-by-step-guide-5e5h",
+    "tags": [],
+    "reactionCount": "5 Reactions",
+    "commentCount": "",
+    "readTime": "3 min",
+    "comments": [],
+    "createdAt": "Jul 20 (22 hours ago)"
+  },
+  {
+    "title": "My $200 AWS Free Tier Mistake: 5 Critical Lessons Every Developer Must Know",
+    "link": "https://dev.to/arbythecoder/my-200-aws-mistake-how-i-learned-the-hard-way-that-free-tier-isnt-actually-free-ebg",
+    "tags": [
+      "cloud",
+      "aws",
+      "cloudcomputing",
+      "cloudnative"
+    ],
+    "reactionCount": "4 Reactions",
+    "commentCount": "",
+    "readTime": "3 min",
+    "comments": [],
+    "createdAt": "Jul 19 (1 day ago)"
+  },
+  {
+    "title": "🧩 Docker Layer Caching",
+    "link": "https://dev.to/dpvasani56/docker-layer-caching-2i84",
+    "tags": [
+      "webdev",
+      "programming",
+      "docker",
+      "devops"
+    ],
+    "reactionCount": "5 Reactions",
+    "commentCount": "",
+    "readTime": "2 min",
+    "comments": [],
+    "createdAt": "Jul 20 (1 day ago)"
+  },
+  {
+    "title": "The Power of HTML - Part 8: Web Components: Custom Elements and Shadow DOM",
+    "link": "/karthikeyans21/the-power-of-html-part-8-web-components-custom-elements-and-shadow-dom-3ne5",
+    "tags": [
+      "html",
+      "webcomponents",
+      "dom",
+      "frontend"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "3 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "🧠 Solving LeetCode Until I Become Top 1% — Day `49`",
+    "link": "/therealrishat/solving-leetcode-until-i-become-top-1-day-49-26gg",
+    "tags": [],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "2 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "Typography, Colors, and Theme Tricks That Make a Website Feel \"Designed\"",
+    "link": "/d-libro-digital-skills/typography-colors-and-theme-tricks-that-make-a-website-feel-designed-59o4",
+    "tags": [
+      "html",
+      "css",
+      "website",
+      "ai"
+    ],
+    "reactionCount": "1 reaction",
+    "commentCount": "",
+    "readTime": "3 min",
+    "comments": [],
+    "createdAt": "Jul 20 (22 hours ago)"
+  },
+  {
+    "title": "Go's Last Words on Error Handling Syntax",
+    "link": "/leapcell/gos-last-words-on-error-handling-syntax-1e14",
+    "tags": [
+      "webdev",
+      "programming",
+      "go",
+      "backend"
+    ],
+    "reactionCount": "8 reactions",
+    "commentCount": "",
+    "readTime": "6 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "Run Large Language Models on Your Own PC: A Scientist’s Guide to CPUs, GPUs, RAM, VRAM & Quantization",
+    "link": "/cristiansifuentes/run-large-language-models-on-your-own-pc-a-scientists-guide-to-cpus-gpus-ram-vram--2ane",
+    "tags": [
+      "ai",
+      "gpu",
+      "ram",
+      "machinelearning"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "3 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "A local Lambda development environment",
+    "link": "/aws-builders/a-local-lambda-development-environment-5192",
+    "tags": [
+      "aws",
+      "lambda",
+      "developer",
+      "productivity"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "6 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "🔒 Why Secure User Management in Docker Matters?",
+    "link": "/dpvasani56/why-secure-user-management-in-docker-matters-1hk2",
+    "tags": [
+      "webdev",
+      "docker",
+      "devops",
+      "development"
+    ],
+    "reactionCount": "5 reactions",
+    "commentCount": "",
+    "readTime": "2 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "サイトをリニューアルしてHugoに移行",
+    "link": "/px4n/saitoworiniyuarusitehugoniyi-xing-4ilo",
+    "tags": [
+      "hugo",
+      "web"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "1 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "Nexus Digital: A Stunning Intranet Homepage Built with React, Tailwind, and TypeScript",
+    "link": "/walidadebayo/nexus-digital-a-stunning-intranet-homepage-built-with-react-tailwind-and-typescript-1aa3",
+    "tags": [
+      "devchallenge",
+      "frontendchallenge",
+      "css",
+      "javascript"
+    ],
+    "reactionCount": "2 reactions",
+    "commentCount": "",
+    "readTime": "2 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "Math Fractions Teacher Helper",
+    "link": "/michaelos/math-fractions-teacher-helper-52hl",
+    "tags": [
+      "deved",
+      "learngoogleaistudio",
+      "ai",
+      "gemini"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "9 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "🌐 Docker Networking A2Z – Masterclass for Developers & DevOps",
+    "link": "/dpvasani56/docker-networking-a2z-masterclass-for-developers-devops-a8",
+    "tags": [
+      "docker",
+      "networking",
+      "devops",
+      "webdev"
+    ],
+    "reactionCount": "5 reactions",
+    "commentCount": "",
+    "readTime": "11 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "Jekyll, Cloudflare Pages & Workers: A Guide to Dynamic Image Compression & Delivery (Part #1)",
+    "link": "/gerryleonugroho/jekyll-cloudflare-pages-workers-a-guide-to-dynamic-image-compression-delivery-part-1-11ih",
+    "tags": [
+      "webdev",
+      "ruby",
+      "javascript",
+      "workers"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "5 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "Philosophy to cloud",
+    "link": "/deeplomataws/philosophy-to-cloud-4g5m",
+    "tags": [],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "2 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "From Linux and macOS to WSL: Setting Up a Dev Environment on Windows",
+    "link": "/karthik_natarajan_c2f1f18/from-linux-and-macos-to-wsl-setting-up-a-dev-environment-on-windows-1783",
+    "tags": [
+      "cursor",
+      "docker",
+      "linux",
+      "microsoft"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "2 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "The Microprocessor Revolution: Understanding the Fourth Generation of Computers and Its Lasting Impact",
+    "link": "/adityabhuyan/the-microprocessor-revolution-understanding-the-fourth-generation-of-computers-and-its-lasting-5a6n",
+    "tags": [
+      "microprocessor",
+      "fourthgeneration",
+      "4thgeneration"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "6 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "NodeJS Fundamentals: URLSearchParams",
+    "link": "/devopsfundamentals/nodejs-fundamentals-urlsearchparams-4io6",
+    "tags": [
+      "runtime",
+      "programming",
+      "javascript",
+      "urlsearchparams"
+    ],
+    "reactionCount": "1 reaction",
+    "commentCount": "",
+    "readTime": "5 min",
+    "comments": [],
+    "createdAt": "Jul 20 (22 hours ago)"
+  },
+  {
+    "title": "Generative AI vs. AI Agents vs. Agentic AI: What’s the Difference?",
+    "link": "/naresh_82de734ade4c1c66d9/generative-ai-vs-ai-agents-vs-agentic-ai-whats-the-difference-656",
+    "tags": [
+      "  discuss ",
+      "ai",
+      "agentaichallenge",
+      "llm"
+    ],
+    "reactionCount": "1 reaction",
+    "commentCount": "",
+    "readTime": "3 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "How to Create a Fully-Featured ChatBot with Observability Tools to Monitor and Optimize your AI Models",
+    "link": "/ajeetraina/how-to-create-ai-chatbot-from-scratch-using-docker-3kcf",
+    "tags": [
+      "docker",
+      "ai",
+      "developer"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "1 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "Introducing Nexus: A Polished Dashboard Built with Vite, React, and Shadcn/ui",
+    "link": "/praveen-sripati/introducing-nexus-a-polished-dashboard-built-with-vite-react-and-shadcnui-494c",
+    "tags": [
+      "devchallenge",
+      "frontendchallenge",
+      "css",
+      "javascript"
+    ],
+    "reactionCount": "2 reactions",
+    "commentCount": "",
+    "readTime": "2 min",
+    "comments": [],
+    "createdAt": "Jul 20 (21 hours ago)"
+  },
+  {
+    "title": "The Power of HTML - Part 19: The Evolution of HTML: From XHTML to HTML Living Standard",
+    "link": "/karthikeyans21/the-power-of-html-part-19-the-evolution-of-html-from-xhtml-to-html-living-standard-51c3",
+    "tags": [
+      "html",
+      "xhtml",
+      "frontend",
+      "webdev"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "3 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "The Perils of Over-Engineering in Technology",
+    "link": "/ik5/the-perils-of-over-engineering-in-technology-23ad",
+    "tags": [
+      "ai",
+      "simplicity",
+      "technology"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "3 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "SQL DATABASE",
+    "link": "/habeeb_hameed_0753445424a/sql-data-base-1ah2",
+    "tags": [
+      "sql",
+      "serverless",
+      "database",
+      "mysql"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "1 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  },
+  {
+    "title": "The Power of HTML - Part 10: Performance Optimization: Slimming Down Your HTML",
+    "link": "/karthikeyans21/the-power-of-html-part-10-performance-optimization-slimming-down-your-html-4n3i",
+    "tags": [
+      "html",
+      "performance",
+      "frontend",
+      "htmloptimisation"
+    ],
+    "reactionCount": "",
+    "commentCount": "",
+    "readTime": "3 min",
+    "comments": [],
+    "createdAt": "Jul 20"
+  }
+]

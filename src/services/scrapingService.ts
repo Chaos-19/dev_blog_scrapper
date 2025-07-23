@@ -13,9 +13,7 @@ puppeteer.use(stealthPlugin());
 
 export const scrape = async (url: string) => {
   try {
-    console.log(url);
-
-    const cookies = JSON.parse(fs.readFileSync("./cookies.json", "utf8"));
+    const cookies = JSON.parse(`${process.env.DEV_TO_COOKIES}`);
 
     const browser = await puppeteer.launch({
       headless: false,
@@ -44,6 +42,7 @@ export const scrape = async (url: string) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     await new Promise((resolve) => setTimeout(resolve, 9000));
+    await new Promise((resolve) => setTimeout(resolve, 9000));
 
     const html = await page.content();
 
@@ -53,9 +52,12 @@ export const scrape = async (url: string) => {
 
     const blogs = await parseDevToBlogs(html);
 
-    console.log("done");
+    console.log("done: ", blogs.length);
 
-    fs.writeFileSync(path.join("blogs.json"), JSON.stringify(blogs, null, 2));
+    // fs.writeFileSync(
+    //   path.join(`blogs-${new Date().toString()}.json`),
+    //   JSON.stringify(blogs, null, 2)
+    // );
 
     await browser.close();
 

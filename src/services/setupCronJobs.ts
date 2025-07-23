@@ -24,7 +24,7 @@ const setupCronJobs = async (cronExpression: string = "* */8 * * *") => {
         return;
       }
 
-      for (const url of urls) {
+      for (const url of urls.slice(0, 1)) {
         const data = await scrape(url);
         const result = await insertBlog(data);
         logger.info(`✅ Scraped ${url} - Found ${data.length} items`);
@@ -38,7 +38,7 @@ const setupCronJobs = async (cronExpression: string = "* */8 * * *") => {
         }
       }
     } catch (error) {
-      logger.info("❌ Cron job failed:", error);
+      logger.error("❌ Cron job failed:", error);
     }
   });
 };

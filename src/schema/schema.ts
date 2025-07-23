@@ -12,7 +12,7 @@ import {
 } from "drizzle-orm/pg-core";
 
 export const blogPost = pgTable("blog_post", {
-  id: serial("serial").primaryKey(),
+  id: serial("id"),
   title: varchar("title").notNull(),
   link: varchar("link").notNull(),
   reactionCount: varchar("reactionCount"),
@@ -20,13 +20,13 @@ export const blogPost = pgTable("blog_post", {
   readTime: varchar("readTime"),
   tags: text("tags").array(),
   comments: text("comments").array(),
-  scrapedAt: timestamp("scraped_at").notNull().defaultNow(),
-  createdAt: timestamp("created_at").notNull(),
-  postHash: text("post_hash").notNull(),
+  scrapedAt: timestamp("scrapedAt").notNull().defaultNow(),
+  createdAt: varchar("createdAt").notNull(),
+  postHash: text("postHash").notNull(),
 });
 
 export const clusteredPost = pgTable("clustered_post", {
-  id: serial("id").primaryKey(),
+  id: serial("id"),
 
   blogPostId: integer("blog_post_id")
     .notNull()

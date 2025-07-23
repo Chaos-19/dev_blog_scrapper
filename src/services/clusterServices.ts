@@ -9,7 +9,7 @@ const MEDIUM_READ_THRESHOLD = 5;
 const RECENT_HOURS = 24;
 
 export const clusterService = {
-  generateClustersForPost(post: BlogType<Date>): ClusteredPostType[] {
+  generateClustersForPost(post: BlogType<string>): ClusteredPostType[] {
     const clusters: ClusteredPostType[] = [];
 
     const {
