@@ -11,6 +11,8 @@ import logger from "../utils/logger.js";
 import type { User } from "better-auth";
 import { user } from "../schema/auth-schema.js";
 import { auth } from "../auth.js";
+import { title } from "process";
+import { scrape } from "../services/scrapingService.js";
 
 /* declare module "express-serve-static-core" {
   interface Request {
@@ -79,16 +81,14 @@ const insertBlog = async (
   data: Omit<BlogType<string>, "id" | "scrapedAt" | "postHash">[]
 ) => {
   try {
-    let processData: BlogType<Date>[] = data.map((blog) => ({
+    let processData: BlogType<string>[] = data.map((blog, index) => ({
       ...blog,
-      id: 0,
+      id: index + 1,
       postHash: crypto
         .createHash("sha1")
         .update(blog.title + blog.link)
         .digest("hex"),
-      createdAt: parseHumanReadableDate(blog.createdAt, {
-        returnISO: true,
-      }) as Date,
+
       scrapedAt: new Date(),
     }));
 
@@ -99,9 +99,13 @@ const insertBlog = async (
         inArray(blogPost.postHash, [
           ...processData.map((blog) => blog.postHash),
         ])
-      );
+      )
+      .catch((err) => {
+        logger.error(`Error checking existing posts: ${err.message}`);
+        return [];
+      });
 
-    let filterPost: BlogType<Date>[] = processData.filter(
+    let filterPost: BlogType<string>[] = processData.filter(
       (blog) =>
         !existingBlogPosts.some(
           (existingBlog) => existingBlog.postHash === blog.postHash
@@ -111,8 +115,25 @@ const insertBlog = async (
     if (filterPost.length > 0) {
       const newBlogPosts = await db
         .insert(blogPost)
-        .values([...filterPost])
-        .returning(); //{ postHash: blogPost.postHash }
+        .values(
+          filterPost.map((post) => ({
+            title: post.title,
+            link: post.link,
+            reactionCount: post.reactionCount,
+            commentCount: post.commentCount,
+            readTime: post.readTime,
+            tags: post.tags,
+            comments: post.comments,
+            scrapedAt: post.scrapedAt,
+            createdAt: post.createdAt,
+            postHash: post.postHash,
+          }))
+        )
+        .returning()
+        .catch((err) => {
+          logger.error(`Error inserting: ${err.message}`);
+          return [];
+        }); //{ postHash: blogPost.postHash }
     }
     logger.info(
       `Inserted ${filterPost.length} new blog posts out of ${data.length}`
@@ -123,7 +144,7 @@ const insertBlog = async (
       posts: filterPost,
     };
   } catch (error) {
-    logger.info(`Error inserting blogs: ${error}`);
+    logger.error(`Error inserting blogs: ${error}`);
     return { status: "failed" };
   }
 };
@@ -141,7 +162,7 @@ const deleteJob = async (id: number) => {
     logger.info(`Deleted blog post with ID: ${result[0].id}`);
     return { status: "successful", deletedId: result[0].id };
   } catch (error) {
-    logger.info("Error deleting blog post:", error);
+    logger.error("Error deleting blog post:", error);
     return { status: "failed", message: "An error occurred while deleting" };
   }
 };

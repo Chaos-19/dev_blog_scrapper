@@ -13,6 +13,7 @@ import logger from "./utils/logger.js";
 import setupCronJobs from "./services/setupCronJobs.js";
 import { requireAuth } from "./middleware/authenticate.js";
 import userRoute from "./routes/user.js";
+import BlogRouter from "./routes/blogPost.js";
 
 dotenv.config();
 
@@ -23,7 +24,7 @@ app.all("/api/auth/*splat", toNodeHandler(auth));
 app.use(express.json());
 
 app.use(helmet());
-// Configure CORS middleware
+// Configure CORS middlewares
 /* app.use(
   cors({
     origin: "http://localhost:300",
@@ -42,11 +43,12 @@ app.use((req, res, next) => {
 
 app.use("/", healthRoutes);
 app.use("/api/user", userRoute);
+app.use("/post", BlogRouter);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 /* app.post("/user", (req, res) => {
   res.status(201).json({ name: "Ruben" });
 }); */
-//setupCronJobs("0 */4 * * *");
+//setupCronJobs("*/3 * * * *");
 setupCronJobs("0 6,14,22 * * *");
 
 app.get("/health", (req: Request, res: Response) => {
