@@ -24,7 +24,7 @@ const setupCronJobs = async (cronExpression: string = "* */8 * * *") => {
         return;
       }
 
-      for (const url of urls.slice(0, 1)) {
+      for (const url of urls) {
         const data = await scrape(url);
         const result = await insertBlog(data);
         logger.info(`✅ Scraped ${url} - Found ${data.length} items`);

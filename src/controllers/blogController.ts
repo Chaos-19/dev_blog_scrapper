@@ -129,6 +129,15 @@ const insertBlog = async (
             postHash: post.postHash,
           }))
         )
+        .onConflictDoUpdate({
+          target: blogPost.postHash,
+          set: {
+            reactionCount: blogPost.reactionCount,
+            commentCount: blogPost.commentCount,
+            //tags: blogPost.tags,
+            comments: blogPost.comments,
+          },
+        })
         .returning()
         .catch((err) => {
           logger.error(`Error inserting: ${err.message}`);
