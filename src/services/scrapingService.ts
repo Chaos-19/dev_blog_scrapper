@@ -5,6 +5,7 @@ import puppeteerExtra from "puppeteer-extra";
 import dotenv from "dotenv";
 
 import stealthPlugin from "puppeteer-extra-plugin-stealth";
+import logger from "../utils/logger.js";
 
 const puppeteer = puppeteerExtra.default; // Ensure compatibility with ESM
 
@@ -14,6 +15,8 @@ puppeteer.use(stealthPlugin());
 export const scrape = async (url: string) => {
   try {
     const cookies = JSON.parse(`${process.env.DEV_TO_COOKIES}`);
+
+    logger.info(`cookies data ${cookies}`);
 
     const browser = await puppeteer.launch({
       headless: false,

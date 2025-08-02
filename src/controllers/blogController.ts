@@ -3,7 +3,7 @@ import { blogPost, clusteredPost } from "../schema/schema.js";
 
 import { Response, Request } from "express";
 
-import { and, desc, eq, ilike, inArray, or } from "drizzle-orm";
+import { and, desc, eq, ilike, inArray, or, sql } from "drizzle-orm";
 import { BlogType } from "../types/index.js";
 import crypto from "crypto";
 import { parseHumanReadableDate } from "../utils/parseHumanReadableDate.js";
@@ -131,16 +131,18 @@ const insertBlog = async (
         )
         .onConflictDoUpdate({
           target: blogPost.postHash,
+          targetWhere: sql``,
           set: {
-            reactionCount: blogPost.reactionCount,
-            commentCount: blogPost.commentCount,
-            //tags: blogPost.tags,
-            comments: blogPost.comments,
+            reactionCount: sql`excluded."reactionCount"`,
+            commentCount: sql`excluded."commentCount"`,
+            comments: sql`excluded."comments"`,
           },
         })
         .returning()
         .catch((err) => {
           logger.error(`Error inserting: ${err.message}`);
+          logger.error(err);
+
           return [];
         }); //{ postHash: blogPost.postHash }
     }
