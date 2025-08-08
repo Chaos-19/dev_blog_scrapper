@@ -14,7 +14,7 @@ import setupCronJobs from "./services/setupCronJobs.js";
 import { requireAuth } from "./middleware/authenticate.js";
 import userRoute from "./routes/user.js";
 import BlogRouter from "./routes/blogPost.js";
-import { log } from "console";
+import { createProxyMiddleware } from "http-proxy-middleware";
 
 dotenv.config();
 
@@ -50,6 +50,16 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(
+  "/n8n",
+  createProxyMiddleware({
+    target: "http://localhost:5678",
+    changeOrigin: true,
+    pathRewrite: {
+      "^/n8n": "", // Remove /n8n prefix when forwarding
+    },
+  })
+);
 //app.use(requireAuth);
 
 app.use("/", healthRoutes);
