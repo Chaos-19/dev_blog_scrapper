@@ -2,6 +2,11 @@ import { Request, Response } from "express";
 import { auth } from "../auth.js";
 import logger from "../utils/logger.js";
 import { authClient } from "../lib/auth-client.js";
+import { db } from "../config/db.js";
+import { user } from "../schema/schema.js";
+import { eq } from "drizzle-orm";
+import { count, error, log } from "console";
+import { fromNodeHeaders } from "better-auth/node";
 
 /**
  * User registration controller for handling user sign-up requests.
@@ -98,5 +103,62 @@ export async function loginUser(req: Request, res: Response) {
     });
   } catch (err: any) {
     return res.status(401).json({ error: err.message || "Login failed" });
+  }
+}
+
+export async function updateUserPreferce(
+  req: Request,
+  res: Response
+): Promise<void> {
+  //const { userId } = req.params;
+  try {
+    const { topicsOfInterset, readTime, apiKey } = req.body;
+    const verifyApiKey = await auth.api.verifyApiKey({
+      body: {
+        key: apiKey,
+      },
+    });
+
+    if (!verifyApiKey.valid) {
+      res.status(401).json({ error: "Invalid API key" });
+      return;
+    }
+    const result = await db
+      .update(user)
+      .set({
+        topicsOfInterset,
+        readTime,
+      })
+      .where(eq(user.id, String(verifyApiKey.key?.userId)))
+      .returning({
+        topicsOfInterset: user.topicsOfInterset,
+        readTime: user.readTime,
+        id: user.id,
+      });
+
+    if (result) {
+      throw new Error("Failed to update user preferences");
+    }
+
+    logger.debug(
+      `User updated preferences: ${JSON.stringify({
+        result: await auth.api.verifyApiKey({ body: { key: apiKey } }),
+      })}`
+    );
+
+    res.status(200).json({
+      message: "User updated successfully",
+      user: result,
+      error: null,
+      success: true,
+    });
+  } catch (err: any) {
+    logger.error(`Update failed for user : ${err}`);
+    res.status(500).json({
+      error: err.message || "Update failed",
+      success: false,
+      message: "Failed to update user preferences",
+      user: null,
+    });
   }
 }

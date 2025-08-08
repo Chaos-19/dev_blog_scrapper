@@ -14,6 +14,7 @@ import setupCronJobs from "./services/setupCronJobs.js";
 import { requireAuth } from "./middleware/authenticate.js";
 import userRoute from "./routes/user.js";
 import BlogRouter from "./routes/blogPost.js";
+import { log } from "console";
 
 dotenv.config();
 
@@ -32,6 +33,16 @@ app.use(helmet());
     credentials: true,
   })
 ); */
+
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  logger.info(`Request received: ${req.method} ${req.url}`);
+  logger.info(`Request headers: ${JSON.stringify(req.headers)}`);
+  logger.info(`Request body: ${JSON.stringify(req.body)}`);
+  next();
+});
 
 app.use(errorHandler);
 app.use((req, res, next) => {
