@@ -22,7 +22,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install n8n and other dependencies
-RUN npm install --global n8n && npm ci
+RUN npm install --g n8n && npm ci
 
 # Copy the entire project to the working directory
 COPY . .
